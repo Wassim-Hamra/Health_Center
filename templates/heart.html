@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+
+    <title>Health Center | Heart Attack Prediction</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="author" content="Mohamed Wassim Hamra">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+
+    <!-- form -->
+    <link rel="stylesheet" href="{% static 'form/fonts/icomoon/style.css' %}">
+    <link rel="stylesheet" href="{% static 'form/css/style.css' %}">
+    <!-- MAIN CSS -->
+    <link rel="stylesheet" href="{% static 'css/tooplate-style.css' %}">
+    <!--favicon section-->
+
+    <link rel="icon" href="{% static 'images/favicon/favicon.ico' %}" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/favicon/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/favicon/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/favicon/favicon-16x16.png' %}">
+    <link rel="manifest" href="{% static 'images/favicon/site.webmanifest' %}">
+
+</head>
+<body id="top" data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
+
+<!-- PRE LOADER -->
+<section class="preloader">
+    <div class="spinner">
+
+        <span class="spinner-rotate"></span>
+
+    </div>
+</section>
+
+
+<!-- MENU -->
+<section class="navbar navbar-default navbar-static-top" role="navigation">
+    <div class="container">
+
+        <div class="navbar-header">
+            <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon icon-bar"></span>
+                <span class="icon icon-bar"></span>
+                <span class="icon icon-bar"></span>
+            </button>
+
+            <!-- lOGO TEXT HERE -->
+            <a href="{% url 'index' %}" class="navbar-brand"><i class="fa fa-h-square"></i>ealth Center</a>
+        </div>
+
+        <!-- MENU LINKS -->
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="{% url 'index' %}" class="smoothScroll">Home</a></li>
+                <li><a href="{% url 'index' %}#aboutme" class="smoothScroll">About Me</a></li>
+                <li><a href="{% url 'index' %}#appointment" class="smoothScroll">Contact</a></li>
+                <li><a href="#disclaimer" class="smoothScroll">Disclaimer</a></li>
+                <li class="appointment-btn"><a href="#top">Heart Attack Prediction</a></li>
+                <li class="appointment-btn"><a href="{% url 'diabetes' %}">Diabetes Prediction</a></li>
+                <li class="appointment-btn"><a href="{% url 'parkinson' %}">Parkinson Prediction</a></li>
+            </ul>
+        </div>
+
+    </div>
+</section>
+<div class="container wow fadeInUp" data-wow-delay="0.1s">
+    <h1 align="center"><span
+            style="color: white; background-color: #a5c422; border-radius: 10px; padding: 0px 7px 0px 7px;font-size: 70px;">H</span>eart
+        Attack Prediction</h1>
+</div>
+<section data-stellar-background-ratio="1">
+    <div class="content">
+
+        <div class="container wow fadeInUp" data-wow-delay="0.3s">
+            <div class="row align-items-stretch no-gutters contact-wrap">
+                <div class="col-md-12">
+                    <div class="form h-100">
+                        <h2><strong>PLEASE FILL IN THIS FORM</strong></h2>
+                        <h4>Check with a doctor or a medical specialist before filling this form.</h4>
+                        <form class="mb-5" method="post" action="result_heart.html" id="contactForm" name="contactForm">
+                            {% csrf_token %}
+
+
+                            <div class="row">
+                                <div class="col-md-6 form-group mb-3">
+                                    <select class="custom-select" id="budget" name="sex">
+                                        <option selected>Sex</option>
+                                        <option value="male">Male</option>
+                                        <option value="female">Female</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6 form-group mb-3">
+                                    <select class="custom-select" id="budget" name="exang">
+                                        <option selected>Exercice Induced Angina</option>
+                                        <option value="yes">Yes</option>
+                                        <option value="no">No</option>
+                                    </select>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="col-md-6 form-group mb-3">
+                                    <select class="custom-select" id="budget" name="ca">
+                                        <option selected>Number Of Major Vessels</option>
+                                        <option value="0">0</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6 form-group mb-3">
+                                    <select class="custom-select" id="budget" name="cp">
+                                        <option selected>Chest Pain Type</option>
+                                        <option value="1">Typical Angina</option>
+                                        <option value="2">Atypical Angina</option>
+                                        <option value="3">Non-anginal Type</option>
+                                        <option value="4">Asymptomatic</option>
+                                    </select>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="col-md-6 form-group mb-3">
+                                    <select class="custom-select" id="budget" name="fbs">
+                                        <option selected>Fasting Blood Pressure over 120 mg/dl</option>
+                                        <option value="0">False</option>
+                                        <option value="1">True</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6 form-group mb-3">
+                                    <select class="custom-select" id="budget" name="rest_ecg">
+                                        <option selected>Resting Electrocardiographic Results</option>
+                                        <option value="0">Normal</option>
+                                        <option value="1">having ST-T wave abnormality (T wave inversions
+                                            and/or
+                                            ST elevation or depression of > 0.05 mV)
+                                        </option>
+                                        <option value="2">Showing probable or definite left ventricular
+                                            hypertrophy by Estes' criteria
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6 form-group mb-3">
+                                    <input type="number" class="form-control" name="trtbps"
+                                           placeholder="Resting Blood Pressure (in mm Hg)">
+                                </div>
+                                <div class="col-md-6 form-group mb-3">
+                                    <input type="number" class="form-control" name="chol"
+                                           placeholder="Cholesterol (in mg/dl)">
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6 form-group mb-3">
+                                    <input type="number" class="form-control" name="thalach"
+                                           placeholder="Maximum Heart Rate Achieved">
+                                </div>
+                                <div class="col-md-6 form-group mb-3">
+                                    <input type="number" class="form-control" name="age"
+                                           placeholder="Age">
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="col-md-12 form-group">
+                                    <input type="submit" value="See Results"
+                                           class="btn btn-primary rounded-0 py-2 px-4"
+                                           style="background-color: #a5c422;-webkit-box-shadow: #a5c422;box-shadow: #a5c422">
+                                    <span class="submitting"></span>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="disclaimer" data-stellar-background-ratio="1">
+    <div class="square-container">
+        <div class="square">
+            <h2 class="wow fadeInUp" data-wow-delay="0.1s">Disclaimer</h2>
+            <div class="wow fadeInUp" data-wow-delay="0.8s">
+                <p>The health predictions provided by Health Center are for informational purposes only and
+                    should not
+                    replace professional medical advice. Consult a healthcare provider before making any
+                    health-related
+                    decisions. Our predictions are based on data analysis and may not consider all factors
+                    affecting
+                    your
+                    health.</p>
+                <p><strong>By using Health Center, you acknowledge the limitations of predictions and agree not
+                    to rely
+                    solely on them for medical decisions.</strong></p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer data-stellar-background-ratio="5">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-4 col-sm-4">
+                <div class="footer-thumb">
+                    <h4 class="wow fadeInUp" data-wow-delay="0.4s">About This Page</h4>
+                    <div class="wow fadeInUp" data-wow-delay="0.8s">
+                        <p>This website was coded in HTML, CSS and JavaScript using Boostrap, JQuery and
+                            Django...</p>
+
+                        <div class="contact-info">
+                            <a href="https://github.com/Wassim-Hamra?tab=repositories">See More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {#            <div class="col-md-4 col-sm-4">#}
+            {#                <div class="footer-thumb">#}
+            {#                    <h4 class="wow fadeInUp" data-wow-delay="0.4s">My Latest Projects</h4>#}
+            {#                    <div class="wow fadeInUp" data-wow-delay="0.8s">#}
+            {#                        <div class="latest-stories">#}
+            {#                            <div class="stories-image">#}
+            {#                                <a href="#"><img src="images/news-image.jpg" class="img-responsive" alt=""></a>#}
+            {#                            </div>#}
+            {#                            <div class="stories-info">#}
+            {#                                <a href="#"><h5>Amazing Technology</h5></a>#}
+            {#                                <span>March 08, 2018</span>#}
+            {#                            </div>#}
+            {#                        </div>#}
+            {##}
+            {##}
+            {#                        <div class="latest-stories">#}
+            {#                            <div class="stories-image">#}
+            {#                                <a href="#"><img src="images/news-image.jpg" class="img-responsive" alt=""></a>#}
+            {#                            </div>#}
+            {#                            <div class="stories-info">#}
+            {#                                <a href="#"><h5>New Healing Process</h5></a>#}
+            {#                                <span>February 20, 2018</span>#}
+            {#                            </div>#}
+            {#                        </div>#}
+            {#                    </div>#}
+            {#                </div>#}
+            {#            </div>#}
+
+            <div class="col-md-4 col-sm-4">
+                <div class="footer-thumb">
+                    <div class="opening-hours">
+                        <h4 class="wow fadeInUp" data-wow-delay="0.4s">Socials</h4>
+                        <div class="wow fadeInUp" data-wow-delay="0.8s">
+                            <p>See More About Me Here</p>
+                        </div>
+                    </div>
+
+                    <ul class="social-icon">
+                        <div class="wow fadeInUp" data-wow-delay="0.8s">
+                            <li><a href="https://www.linkedin.com/in/medwassimhamra/"
+                                   class="fa fa-linkedin"></a></li>
+                            <li><a href="https://wassimhamra-87d49238a5f9.herokuapp.com/"
+                                   class="fa fa-user"></a></li>
+                            <li><a href="https://github.com/Wassim-Hamra?tab=repositories"
+                                   class="fa fa-github"></a>
+                            </li>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-md-12 col-sm-12 border-top">
+                <div class="col-md-4 col-sm-6">
+                    <div class="copyright-text">
+                        <div class="wow fadeInUp" data-wow-delay="1s">
+                            <p>Copyright &copy; 2023 Mohamed Wassim Hamra
+
+                                | Design: Tooplate</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                    <div class="footer-link">
+                        <div class="wow fadeInUp" data-wow-delay="1.2s">
+                            <a href="{% url 'index' %}#about_me">About Me</a>
+                            <a href="{% url 'index' %}#appointment">Contact</a>
+                            <a href="#disclaimer">Disclaimer</a>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-2 text-align-center">
+                    <div class="angle-up-btn">
+                        <a href="#top" class="smoothScroll wow fadeInUp" data-wow-delay="1.2s"><i
+                                class="fa fa-angle-up"></i></a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script src="{% static 'js/jquery.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static  'js/jquery.sticky.js' %}"></script>
+<script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+<script src="{% static  'js/wow.min.js' %}"></script>
+<script src="{% static 'js/smoothscroll.js' %}"></script>
+<script src="{% static  'js/owl.carousel.min.js' %}"></script>
+<script src="{% static  'js/custom.js' %}"></script>
+
+</body>
+</html>

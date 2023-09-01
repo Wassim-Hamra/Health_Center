@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+
+    <title>Health Center | Parkinson Prediction</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="author" content="Mohamed Wassim Hamra">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@200&display=swap" rel="stylesheet">
+
+    <!-- form -->
+    <link rel="stylesheet" href="{% static 'form/fonts/icomoon/style.css' %}">
+    <link rel="stylesheet" href="{% static 'form/css/style.css' %}">
+    <!-- MAIN CSS -->
+    <link rel="stylesheet" href="{% static 'css/tooplate-style.css' %}">
+    <!--favicon section-->
+
+    <link rel="icon" href="{% static 'images/favicon/favicon.ico' %}" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/favicon/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/favicon/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/favicon/favicon-16x16.png' %}">
+    <link rel="manifest" href="{% static 'images/favicon/site.webmanifest' %}">
+
+</head>
+<body id="top" data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
+
+<!-- PRE LOADER -->
+<section class="preloader">
+    <div class="spinner">
+
+        <span class="spinner-rotate"></span>
+
+    </div>
+</section>
+
+
+<!-- MENU -->
+<section class="navbar navbar-default navbar-static-top" role="navigation">
+    <div class="container">
+
+        <div class="navbar-header">
+            <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon icon-bar"></span>
+                <span class="icon icon-bar"></span>
+                <span class="icon icon-bar"></span>
+            </button>
+
+            <!-- lOGO TEXT HERE -->
+            <a href="{% url 'index' %}" class="navbar-brand"><i class="fa fa-h-square"></i>ealth Center</a>
+        </div>
+
+        <!-- MENU LINKS -->
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="{% url 'index' %}" class="smoothScroll">Home</a></li>
+                <li><a href="{% url 'index' %}#aboutme" class="smoothScroll">About Me</a></li>
+                <li><a href="{% url 'index' %}#appointment" class="smoothScroll">Contact</a></li>
+                <li><a href="#disclaimer" class="smoothScroll">Disclaimer</a></li>
+                <li class="appointment-btn"><a href="{% url 'heart' %}">Heart Attack Prediction</a></li>
+                <li class="appointment-btn"><a href="{% url 'diabetes' %}">Diabetes Prediction</a></li>
+                <li class="appointment-btn"><a href="#top">Parkinson Prediction</a></li>
+            </ul>
+        </div>
+
+    </div>
+</section>
+<section id="results" data-stellar-background-ratio="1">
+    <div class="square-container">
+        <div class="square">
+
+            <section class="wow fadeInUp" data-wow-delay="0.1s">
+                <h1 align="center" style="font-family: 'Arial',sans-serif;"><span
+                        style="color: white; background-color: #a5c422; border-radius: 10px;font-size: 70px;">O</span>ur
+                    AI model predicted</h1>
+
+
+                <div class="wow fadeInUp" data-wow-delay="2.6s">
+                    {% if prediction == 1 %}
+                        <h2 align="center" style="font-family: 'Bai Jamjuree', sans-serif;"><strong>You are <span
+                                style="color: white;background-color: red;border-radius: 5px">AT RISK</span></strong>
+                        </h2>
+
+
+                        <h3 style="font-family: 'Bai Jamjuree', sans-serif;color: red;"
+                            align="center">
+                            Our AI model indicates that you are at risk of parkinson. We strongly advise you to seek
+                            medical
+                            attention. A healthcare professional can provide a thorough assessment and recommend
+                            appropriate steps
+                            to manage your health.</h3>
+                    {% else %}
+                        <h2 align="center" style="font-family: 'Bai Jamjuree', sans-serif;"><strong>You are <span
+                                style="color: white;background-color: lightskyblue;border-radius: 5px;"><strong>NOT AT RISK</strong></span></strong>
+                        </h2>
+                    {% endif %}
+                </div>
+            </section>
+        </div>
+    </div>
+</section>
+<section id="appointment" data-stellar-background-ratio="3" class="wow fadeInUp" data-wow-delay="3.9s">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-6 col-sm-6">
+                <img src="{% static "images/appointment-image.jpg" %}" class="img-responsive" alt="">
+            </div>
+
+            <div class="col-md-6 col-sm-6">
+                <h2><span
+                        style="color: white; background-color: #a5c422; border-radius: 10px; padding: 0px 7px 0px 7px;font-size: 45px;">R</span>ecommendations
+                    For You</h2>
+                <p>{% for recommendation_line in recommendation_lines %}
+                    <li style="font-family: 'Bai Jamjuree', sans-serif;font-size: 20px;font-weight: bold;">{{ recommendation_line }}</li>
+                {% endfor %}</p>
+                <h4 style="font-family: 'Bai Jamjuree',sans-serif">Your Values:</h4>
+                <h5 style="font-family: 'Bai Jamjuree',sans-serif">{{ user_values }}</h5>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<section id="disclaimer" data-stellar-background-ratio="1">
+    <div class="square-container">
+        <div class="square">
+            <h2 class="wow fadeInUp" data-wow-delay="0.1s">Disclaimer</h2>
+            <div class="wow fadeInUp" data-wow-delay="0.8s">
+                <p>The health predictions provided by Health Center are for informational purposes only and
+                    should not
+                    replace professional medical advice. Consult a healthcare provider before making any
+                    health-related
+                    decisions. Our predictions are based on data analysis and may not consider all factors
+                    affecting
+                    your
+                    health.</p>
+                <p><strong>By using Health Center, you acknowledge the limitations of predictions and agree not
+                    to rely
+                    solely on them for medical decisions.</strong></p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer data-stellar-background-ratio="5">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-4 col-sm-4">
+                <div class="footer-thumb">
+                    <h4 class="wow fadeInUp" data-wow-delay="0.4s">About This Page</h4>
+                    <div class="wow fadeInUp" data-wow-delay="0.8s">
+                        <p>This website was coded in HTML, CSS and JavaScript using Boostrap, JQuery and
+                            Django...</p>
+
+                        <div class="contact-info">
+                            <a href="https://github.com/Wassim-Hamra?tab=repositories">See More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {#            <div class="col-md-4 col-sm-4">#}
+            {#                <div class="footer-thumb">#}
+            {#                    <h4 class="wow fadeInUp" data-wow-delay="0.4s">My Latest Projects</h4>#}
+            {#                    <div class="wow fadeInUp" data-wow-delay="0.8s">#}
+            {#                        <div class="latest-stories">#}
+            {#                            <div class="stories-image">#}
+            {#                                <a href="#"><img src="images/news-image.jpg" class="img-responsive" alt=""></a>#}
+            {#                            </div>#}
+            {#                            <div class="stories-info">#}
+            {#                                <a href="#"><h5>Amazing Technology</h5></a>#}
+            {#                                <span>March 08, 2018</span>#}
+            {#                            </div>#}
+            {#                        </div>#}
+            {##}
+            {##}
+            {#                        <div class="latest-stories">#}
+            {#                            <div class="stories-image">#}
+            {#                                <a href="#"><img src="images/news-image.jpg" class="img-responsive" alt=""></a>#}
+            {#                            </div>#}
+            {#                            <div class="stories-info">#}
+            {#                                <a href="#"><h5>New Healing Process</h5></a>#}
+            {#                                <span>February 20, 2018</span>#}
+            {#                            </div>#}
+            {#                        </div>#}
+            {#                    </div>#}
+            {#                </div>#}
+            {#            </div>#}
+
+            <div class="col-md-4 col-sm-4">
+                <div class="footer-thumb">
+                    <div class="opening-hours">
+                        <h4 class="wow fadeInUp" data-wow-delay="0.4s">Socials</h4>
+                        <div class="wow fadeInUp" data-wow-delay="0.8s">
+                            <p>See More About Me Here</p>
+                        </div>
+                    </div>
+                    <div class="wow fadeInUp" data-wow-delay="0.8s">
+                        <ul class="social-icon">
+
+                            <li><a href="https://www.linkedin.com/in/medwassimhamra/"
+                                   class="fa fa-linkedin"></a></li>
+                            <li><a href="https://wassimhamra-87d49238a5f9.herokuapp.com/"
+                                   class="fa fa-user"></a></li>
+                            <li><a href="https://github.com/Wassim-Hamra?tab=repositories"
+                                   class="fa fa-github"></a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12 col-sm-12 border-top">
+                <div class="col-md-4 col-sm-6">
+                    <div class="copyright-text">
+                        <div class="wow fadeInUp" data-wow-delay="1s">
+                            <p>Copyright &copy; 2023 Mohamed Wassim Hamra
+
+                                | Design: Tooplate</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                    <div class="footer-link">
+                        <div class="wow fadeInUp" data-wow-delay="1.2s">
+                            <a href="{% url 'index' %}#about_me">About Me</a>
+                            <a href="{% url 'index' %}#appointment">Contact</a>
+                            <a href="#disclaimer">Disclaimer</a>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-2 text-align-center">
+                    <div class="angle-up-btn">
+                        <a href="#top" class="smoothScroll wow fadeInUp" data-wow-delay="1.2s"><i
+                                class="fa fa-angle-up"></i></a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script src="{% static 'js/jquery.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static  'js/jquery.sticky.js' %}"></script>
+<script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+<script src="{% static  'js/wow.min.js' %}"></script>
+<script src="{% static 'js/smoothscroll.js' %}"></script>
+<script src="{% static  'js/owl.carousel.min.js' %}"></script>
+<script src="{% static  'js/custom.js' %}"></script>
+
+</body>
+</html>

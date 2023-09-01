@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+
+    <title>Health Center</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="author" content="Mohamed Wassim Hamra">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+
+    <!-- MAIN CSS -->
+    <link rel="stylesheet" href="{% static 'css/tooplate-style.css' %}">
+    <!--favicon section-->
+
+    <link rel="icon" href="{% static 'images/favicon/favicon.ico' %}" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/favicon/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/favicon/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/favicon/favicon-16x16.png' %}">
+    <link rel="manifest" href="{% static 'images/favicon/site.webmanifest' %}">
+
+
+</head>
+<body id="top" data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
+
+<!-- PRE LOADER -->
+<section class="preloader">
+    <div class="spinner">
+
+        <span class="spinner-rotate"></span>
+
+    </div>
+</section>
+
+
+<!-- MENU -->
+<section class="navbar navbar-default navbar-static-top" role="navigation">
+    <div class="container">
+
+        <div class="navbar-header">
+            <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon icon-bar"></span>
+                <span class="icon icon-bar"></span>
+                <span class="icon icon-bar"></span>
+            </button>
+
+            <!-- lOGO TEXT HERE -->
+            <a href="{% url 'index' %}" class="navbar-brand"><i class="fa fa-h-square"></i>ealth Center</a>
+        </div>
+
+        <!-- MENU LINKS -->
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#top" class="smoothScroll">Home</a></li>
+                <li><a href="#about_me" class="smoothScroll" \>About Me</a></li>
+                <li><a href="#appointment" class="smoothScroll">Contact</a></li>
+                <li><a href="#disclaimer" class="smoothScroll">Disclaimer</a></li>
+                <li class="appointment-btn"><a href="{% url 'heart' %}">Heart Attack Prediction</a></li>
+                <li class="appointment-btn"><a href="{% url 'diabetes' %}">Diabetes Prediction</a></li>
+                <li class="appointment-btn"><a href="{% url 'parkinson' %}">Parkinson Prediction</a></li>
+            </ul>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- HOME -->
+<section id="home" class="slider" data-stellar-background-ratio="0.5">
+    <div class="container">
+        <div class="row">
+
+            <div class="owl-carousel owl-theme">
+                <div class="item item-first">
+                    <div class="caption">
+                        <div class="col-md-offset-1 col-md-10">
+                            <h3>Unlock a Healthier You With Our</h3>
+                            <h1>Data-Backed Health Intelligence</h1>
+                            <a href="#news" class="section-btn btn btn-default smoothScroll">Predict My Health</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item item-second">
+                    <div class="caption">
+                        <div class="col-md-offset-1 col-md-10">
+                            <h3>Made With Love</h3>
+                            <h1>Learn More About Me</h1>
+                            <a href="#about_me" class="section-btn btn btn-default smoothScroll">About Me</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item item-third">
+                    <div class="caption">
+                        <div class="col-md-offset-1 col-md-10">
+                            <h3>Any Questions ?</h3>
+                            <h1>Send Me A Message</h1>
+                            <a href="#appointment" class="section-btn btn btn-default smoothScroll">Contact</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- ABOUT -->
+<section id="about">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-6 col-sm-6">
+                <div class="about-info">
+                    <h2 class="wow fadeInUp" data-wow-delay="0.6s">Welcome to Your <i class="fa fa-h-square"></i>ealth
+                        Center</h2>
+                    <div class="wow fadeInUp" data-wow-delay="0.8s">
+                        <p id="small-screen">Discover personalized health predictions that empower you to take control
+                            of your well-being.
+                            Predict your risk for conditions like heart attack, diabetes, and parkinson, and receive
+                            tailored recommendations for a healthier lifestyle. Our accurate predictions provide the
+                            insights you need to make informed health
+                            choices.</p>
+                        <p>Join us on a journey to a healthier you with Health Center.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- TEAM -->
+<section id="about_me" data-stellar-background-ratio="1">
+    <div class="square-container" id="aboutme">
+        <div class="square">
+            <h2 class="wow fadeInUp" data-wow-delay="0.1s">About Me</h2>
+            <div class="wow fadeInUp" data-wow-delay="0.8s">
+                <p>I am a tunisian data science student at the Faculty Of Sciences Of Tunis. My passion is working with
+                    hidden pattern recognition, data mining and dataviz. My goal is to optimize world processes by using
+                    data. I'm always excited about new challenges as a data scientist or a data-driven business
+                    consultant.</p>
+
+                <a href="http://wassimhamra-87d49238a5f9.herokuapp.com">Visit My Personal Website</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- NEWS -->
+<section id="news" data-stellar-background-ratio="2.5">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-12 col-sm-12">
+                <!-- SECTION TITLE -->
+                <div class="section-title wow fadeInUp" data-wow-delay="0.1s">
+                    <h2>Predictions</h2>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+                <!-- NEWS THUMB -->
+                <div class="news-thumb wow fadeInUp" data-wow-delay="0.4s">
+                    <a href="{% url 'heart' %}">
+                        <img src="{% static "images/heart_550.jpg" %}" class="img-responsive" alt="">
+                    </a>
+                    <div class="news-info">
+                        <h3><a href="{% url 'heart' %}">Heart Attack</a></h3>
+                        <p>Assess your heart health risk using our predictive model. Get personalized insights into your
+                            heart attack risk based on your health data.</p>
+                        <div class="author">
+                            <img src="{% static "images/author-image.jpg" %}" class="img-responsive"
+                                 alt="Health Center">
+                            <div class="author-info">
+                                <a href="#"><h5>View Source Code</h5></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+                <!-- NEWS THUMB -->
+                <div class="news-thumb wow fadeInUp" data-wow-delay="0.6s">
+                    <a href="{% url 'diabetes' %}">
+                        <img src="{% static "images/diabetes_550.jpg" %}" class="img-responsive" alt="">
+                    </a>
+                    <div class="news-info">
+                        <h3><a href="{% url 'diabetes' %}">Diabetes</a></h3>
+                        <p>Predict your diabetes risk with our advanced model. Input your health details and receive
+                            instant assessments for diabetes risk.</p>
+                        <div class="author">
+                            <img src="{% static "images/author-image.jpg" %}" class="img-responsive" alt="Health Center">
+                            <div class="author-info">
+                                <a href="#"><h5>View Source Code</h5></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+                <!-- NEWS THUMB -->
+                <div class="news-thumb wow fadeInUp" data-wow-delay="0.8s">
+                    <a href="{% url 'parkinson' %}">
+                        <img src="{% static "images/parkinson_550.jpg" %}" class="img-responsive" alt="Health Center">
+                    </a>
+                    <div class="news-info">
+                        <h3><a href="{% url 'parkinson' %}">Parkinson</a></h3>
+                        <p>Uncover your potential risk for Parkinson's disease. Input your data to receive personalized
+                            predictions about your Parkinson's risk.</p>
+                        <div class="author">
+                            <img src="{% static "images/author-image.jpg" %}" class="img-responsive" alt="">
+                            <div class="author-info">
+                                <a href="#"><h5>View Source Code</h5></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- CONTACT -->
+<section id="appointment" data-stellar-background-ratio="3">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-6 col-sm-6">
+                <img src="{% static "images/appointment-image.jpg" %}" class="img-responsive" alt="">
+            </div>
+
+            <div class="col-md-6 col-sm-6">
+                <!-- CONTACT FORM HERE -->
+                <form id="appointment-form" role="form" method="POST" action="#">
+                    {% csrf_token %}
+                    {{ form.non_field_errors }}
+                    <!-- SECTION TITLE -->
+                    <div class="section-title wow fadeInUp" data-wow-delay="0.4s">
+                        <h2>Reach out to me</h2>
+                    </div>
+
+                    <div class="wow fadeInUp" data-wow-delay="0.8s">
+                        <div class="col-md-6 col-sm-6">
+                            <label for="{{ form.first_name.id_for_label }}">First Name</label>
+                            {{ form.first_name }}
+                            {{ form.first_name.errors }}
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <label for="{{ form.last_name.id_for_label }}">Last Name</label>
+                            {{ form.last_name }}
+                            {{ form.last_name.errors }}
+                        </div>
+
+                        <div class="col-md-6 col-sm-6">
+                            <label for="{{ form.email.id_for_label }}">Email</label>
+                            {{ form.email }}
+                            {{ form.email.errors }}
+                        </div>
+                        <div class="col-md-12 col-sm-12">
+                            <label for="{{ form.message.id_for_label }}">Additional Message</label>
+                            {{ form.message }}
+                            {{ form.message.errors }}
+
+                            <button type="submit" class="form-control" id="cf-submit" name="submit">Send Message
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</section>
+<section id="disclaimer" data-stellar-background-ratio="1">
+    <div class="square-container">
+        <div class="square">
+            <h2 class="wow fadeInUp" data-wow-delay="0.1s">Disclaimer</h2>
+            <div class="wow fadeInUp" data-wow-delay="0.8s">
+                <p>The health predictions provided by Health Center are for informational purposes only and should not
+                    replace professional medical advice. Consult a healthcare provider before making any health-related
+                    decisions. Our predictions are based on data analysis and may not consider all factors affecting
+                    your
+                    health.</p>
+                <p><strong>By using Health Center, you acknowledge the limitations of predictions and agree not to rely
+                    solely on them for medical decisions.</strong></p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer data-stellar-background-ratio="5">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-4 col-sm-4">
+                <div class="footer-thumb">
+                    <h4 class="wow fadeInUp" data-wow-delay="0.4s">About This Page</h4>
+                    <div class="wow fadeInUp" data-wow-delay="0.8s">
+                        <p>This website was coded in HTML, CSS and JavaScript using Boostrap, JQuery and Django...</p>
+
+                        <div class="contact-info">
+                            <a href="https://github.com/Wassim-Hamra?tab=repositories">See More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {#            <div class="col-md-4 col-sm-4">#}
+            {#                <div class="footer-thumb">#}
+            {#                    <h4 class="wow fadeInUp" data-wow-delay="0.4s">My Latest Projects</h4>#}
+            {#                    <div class="wow fadeInUp" data-wow-delay="0.8s">#}
+            {#                        <div class="latest-stories">#}
+            {#                            <div class="stories-image">#}
+            {#                                <a href="#"><img src="{% static "images/news-image.jpg" %}" class="img-responsive" alt=""></a>#}
+            {#                            </div>#}
+            {#                            <div class="stories-info">#}
+            {#                                <a href="#"><h5>Amazing Technology</h5></a>#}
+            {#                                <span>March 08, 2018</span>#}
+            {#                            </div>#}
+            {#                        </div>#}
+            {##}
+            {##}
+            {#                        <div class="latest-stories">#}
+            {#                            <div class="stories-image">#}
+            {#                                <a href="#"><img src="{% static  'images/news-image.jpg'%}" class="img-responsive" alt=""></a>#}
+            {#                            </div>#}
+            {#                            <div class="stories-info">#}
+            {#                                <a href="#"><h5>New Healing Process</h5></a>#}
+            {#                                <span>February 20, 2018</span>#}
+            {#                            </div>#}
+            {#                        </div>#}
+            {#                    </div>#}
+            {#                </div>#}
+            {#            </div>#}
+
+            <div class="col-md-4 col-sm-4">
+                <div class="footer-thumb">
+                    <div class="opening-hours">
+                        <h4 class="wow fadeInUp" data-wow-delay="0.4s">Socials</h4>
+                        <div class="wow fadeInUp" data-wow-delay="0.8s">
+                            <p>See More About Me Here</p>
+                        </div>
+                    </div>
+
+                    <ul class="social-icon">
+                        <div class="wow fadeInUp" data-wow-delay="0.8s">
+                            <li><a href="https://www.linkedin.com/in/medwassimhamra/" class="fa fa-linkedin"></a></li>
+                            <li><a href="https://wassimhamra-87d49238a5f9.herokuapp.com/" class="fa fa-user"></a></li>
+                            <li><a href="https://github.com/Wassim-Hamra?tab=repositories" class="fa fa-github"></a>
+                            </li>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-md-12 col-sm-12 border-top">
+                <div class="col-md-4 col-sm-6">
+                    <div class="copyright-text">
+                        <div class="wow fadeInUp" data-wow-delay="1s">
+                            <p>Copyright &copy; 2023 Mohamed Wassim Hamra
+
+                                | Design: Tooplate</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                    <div class="footer-link">
+                        <div class="wow fadeInUp" data-wow-delay="1.2s">
+                            <a href="#about_me">About Me</a>
+                            <a href="#appointment">Contact</a>
+                            <a href="#disclaimer">Disclaimer</a>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-2 text-align-center">
+                    <div class="angle-up-btn">
+                        <a href="#top" class="smoothScroll wow fadeInUp" data-wow-delay="1.2s"><i
+                                class="fa fa-angle-up"></i></a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script src="{% static 'js/jquery.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static  'js/jquery.sticky.js' %}"></script>
+<script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+<script src="{% static  'js/wow.min.js' %}"></script>
+<script src="{% static 'js/smoothscroll.js' %}"></script>
+<script src="{% static  'js/owl.carousel.min.js' %}"></script>
+<script src="{% static  'js/custom.js' %}"></script>
+
+</body>
+</html>
