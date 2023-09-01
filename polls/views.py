@@ -6,6 +6,10 @@ import numpy
 # importing models
 model_diabetes = load('./Models/diabetes_model.jbl')
 scaler_diabetes = load('./Models/scaler_diabetes.jbl')
+# model_heart = load('./Models/heart_model.jbl')
+# scaler_heart = load('./Models/scaler_heart.jbl')
+# model_parkinson = load('./Models/parkinson_model.jbl')
+# scaler_parkinson = load('./Models/scaler_parkinson.jbl')
 
 
 
