@@ -78,10 +78,20 @@ WSGI_APPLICATION = "Health_Center_Django.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.sqlite3",
+#         "NAME": BASE_DIR / "db.sqlite3",
+#     }
+# }
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "ENGINE": "django.db.backends.postgresql_psycopg2",
+        "NAME": "dat59h84u1e27k",
+        "USER":"vfwsiszefwrbpd",
+        "PASSWORD":"42e5d3917b8f28c18f3f9b7553feff06b0fa5e89d62ab6cf802edfe9867e6031",
+        "HOST":"ec2-35-169-11-108.compute-1.amazonaws.com",
+        "PORT":"5432"
     }
 }
 
@@ -114,7 +124,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = "static/"
+STATIC_URL = "/static/"
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = [
     BASE_DIR / STATIC_URL
